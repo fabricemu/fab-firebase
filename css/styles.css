@@ -1,0 +1,86 @@
+body {
+    font-family: Inter, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=tel] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #046DAA;
+    position: relative;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+.form-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+.form-content .form_inputs{
+    display: flex;
+    gap: 20px;
+}
+
+
+.clearfix{
+    display: flex;
+    justify-content: center;
+}
+#backend_error {
+    background: #f19090;
+    padding: 5px 10px;
+    transition: 0.3s;
+    animation: cssAnimation 0s ease-in-out 60s forwards;
+    animation-fill-mode: forwards;
+    display: none;
+    text-align: center;
+}
+
+@keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
