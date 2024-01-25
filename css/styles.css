@@ -7,7 +7,7 @@ body {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password],input[type=tel] {
+input[type=text], input[type=password], input[type=tel] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -50,16 +50,18 @@ button:hover {
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 }
-.form-content .form_inputs{
+
+.form-content .form_inputs {
     display: flex;
     gap: 20px;
 }
 
 
-.clearfix{
+.clearfix {
     display: flex;
     justify-content: center;
 }
+
 #backend_error {
     background: #f19090;
     padding: 5px 10px;
@@ -70,12 +72,84 @@ button:hover {
     text-align: center;
 }
 
+/*CSS for List of Users.html*/
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    gap: 40px
+}
+
+.wrapper .logo {
+    max-width: 250px;
+}
+
+.wrapper #title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.wrapper .main {
+    width: 450px;
+    height: 900px;
+    background: #f0f1f7;
+    border-radius: 20px;
+    color: #1b1b32;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 10px 10px 0 #aeacb2;
+}
+.wrapper #logout{
+    width: 100px;
+    background: #cc0404;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
 @keyframes cssAnimation {
     to {
         width: 0;
         height: 0;
         display: none;
     }
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
 }
 
 /* Change styles for cancel button and signup button on extra small screens */

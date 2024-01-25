@@ -58,8 +58,16 @@ const login = () => {
     const password = passwordInput.value;
     auth.signInWithEmailAndPassword(email, password)
         .then((userlogin) => {
-            alert("Welcome to codetyHub")
-            console.log(userlogin)
+            // Fetch client data using the email
+            fetchClientData(email)
+                .then((clientData) => {
+                    // Pass client data to the list_users.html page
+                    const encodedData = encodeURIComponent(JSON.stringify(clientData));
+                    window.location.href = `pages/list_users.html?email=${userlogin.user.email}&clientData=${encodedData}`;
+                })
+                .catch((fetchError) => {
+                    console.error("Error fetching client data:", fetchError);
+                });
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -67,6 +75,22 @@ const login = () => {
             error_div.style.display = "block";
             error_div.innerHTML = `<b>Invalid username or password </b><br>`
         })
+    const fetchClientData = async (email) => {
+        try {
+            // Assuming your Firestore collection is named "Client"
+            const querySnapshot = await db.collection("Clients").get();
+            const clientData = [];
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                clientData.push(data);
+            });
+
+            return clientData;
+        } catch (error) {
+            throw error;
+        }
+    };
 }
 const reset_password = (() => {
     const email = emailInput.value;
