@@ -109,3 +109,7 @@ const reset_password = (() => {
             // Handle any errors related to password reset
         });
 });
+const logout = () => {
+    localStorage.clear();
+    window.location.href = "../login.html";
+};

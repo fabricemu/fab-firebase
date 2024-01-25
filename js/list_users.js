@@ -16,8 +16,8 @@ const urlData = () => {
 
 const clientData = urlData().decodedData
 const userEmail = urlData().userEmail
-const logout = document.getElementById("logout")
-logout.addEventListener("click", () => window.location.href = "../login.html")
+// const logout = document.getElementById("logout")
+// logout.addEventListener("click", () => window.location.href = "../login.html")
 
 if (clientData) {
     // Reference to the table body
